@@ -109,7 +109,7 @@ docker run -it --rm \
 cd /root/workshop
 colcon build
 source install/setup.bash
-./run_bridge.py --world ~/workshop/workshop_assets/assets/world/explore_world.sdf --gui
+ros2 launch explore_world sim_bridge.launch.py
 ```
 
 ✅ Isso abrirá o mundo `.sdf` no Gazebo Ignition com pontes ROS 2 ativas.
