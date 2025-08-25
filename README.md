@@ -93,11 +93,10 @@ xhost +local:docker
 
 ```bash
 docker run -it --rm \
-  -v ~/ros2_gazebo_docker_farm:/root/moray \
-  -e GZ_SIM_RESOURCE_PATH=/root/workshop_assets/assets/sdf_world \
+  -v ~/ros2_workshop/workshop_assets:/root/workshop_assets:ro \
+  -e IGN_GAZEBO_RESOURCE_PATH=/root/workshop_assets/world:/root/workshop_assets/assets/sdf_world \
   -e GAZEBO_MODEL_PATH=/root/workshop_assets/assets/models \
-  -e DISPLAY=$DISPLAY \
-  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
   --network host \
   ros2_workshop
 ```
