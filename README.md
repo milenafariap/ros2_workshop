@@ -9,10 +9,10 @@ Este repositório contém um ambiente de simulação agrícola utilizando **ROS 
 ## 📦 Estrutura
 
 ```
-ros2_gazebo_docker_farm/
+ros2_workshop/
 ├── Dockerfile
-├── moray_assets/
-│   └── farm_inspection/
+├── workshop_assets/
+│   └── assets/
 │       ├── launch/
 │       ├── models/
 │       ├── scripts/
