@@ -93,7 +93,7 @@ xhost +local:docker
 
 ```bash
 docker run -it --rm \
-  -v ~/ros2_workshop/workshop_assets:/root/workshop_assets:ro \
+  -v ~/ros2_workshop/workshop_assets:/root/workshop_assets \
   -e IGN_GAZEBO_RESOURCE_PATH=/root/workshop_assets/world:/root/workshop_assets/assets/sdf_world \
   -e GAZEBO_MODEL_PATH=/root/workshop_assets/assets/models \
   -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -106,10 +106,10 @@ docker run -it --rm \
 ### 👣 8. Compile e rode dentro do contêiner
 
 ```bash
-cd /root/workshop
+cd /root/workshop_assets
 colcon build
 source install/setup.bash
-ros2 launch explore_world sim_bridge.launch.py
+ros2 launch explore_world gazebo_with_bridge.launch.py
 ```
 
 ✅ Isso abrirá o mundo `.sdf` no Gazebo Ignition com pontes ROS 2 ativas.
