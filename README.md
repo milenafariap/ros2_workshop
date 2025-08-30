@@ -130,25 +130,44 @@ docker ps
 docker exec it "NOME DO ARQUIVO" bash
 ```
 
-✅ Isso abrirá o mundo `.sdf` no Gazebo Ignition com pontes ROS 2 ativas.
-
 ---
 
-## 🔹 Modo Alternativo: Rodar somente o mundo `.sdf`
+## 🤖 Testes - tópicos e movimento
 
-Caso queira apenas abrir o mundo sem ROS 2:
-
-### Dentro do contêiner:
+## 👣 1. Listar os tópicos ativos:
 
 ```bash
-ign gazebo /root/workshop/workshop_assets/assets/world/explore_world.sdf --verbose
+ros2 topic list -t
 ```
 
-Ou se estiver no host com Ignition instalado:
+## 👣 2. Conferir mensagens chegando no tópico:
 
 ```bash
-ign gazebo path/to/building_robot.sdf --verbose
+ros2 topic echo /cmd_vel
 ```
+
+## 👣 3. Mandar o robô andar para frente
+
+```bash
+ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist \
+'{linear: {x: 0.2, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
+```
+
+## 👣 4. Mandar o robô girar no lugar
+
+```bash
+ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist \
+'{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.5}}'
+```
+
+## 👣 5. Parar imediatamente**
+
+```bash
+ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist \
+'{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
+```
+
+
 
 ---
 
