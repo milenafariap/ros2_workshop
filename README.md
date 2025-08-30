@@ -193,6 +193,37 @@ Ver a taxa de publicação
 ```bash
 ros2 topic hz /cmd_vel
 ```
+---
+
+🚀 Executar o teleop
+
+No mesmo ambiente/contêiner em que seu robô está rodando:
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard
+```
+
+Você verá algo assim:
+
+Reading from keyboard
+---------------------------
+Moving around:
+   u    i    o
+   j    k    l
+   m    ,    .
+
+For Holonomic mode (strafing), hold shift:
+---------------------------
+   U    I    O
+   J    K    L
+   M    <    >
+
+t : up (+z)
+b : down (-z)
+
+anything else : stop
+
+
 
 ---
 
