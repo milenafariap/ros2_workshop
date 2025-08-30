@@ -103,13 +103,31 @@ docker run -it --rm \
 
 ---
 
-### 👣 8. Compile e rode dentro do contêiner
+### 👣 8. Compile dentro do contêiner
 
 ```bash
 cd /root/workshop_assets
 colcon build
 source install/setup.bash
 ros2 launch explore_world gazebo_with_bridge.launch.py
+```
+### 👣 9. Rodar o arquivo launch dentro do contêiner
+
+```bash
+source install/setup.bash
+ros2 launch explore_world gazebo_with_bridge.launch.py
+```
+
+### 👣 10. Abrindo o docker em outro terminal - consultando o nome do docker
+
+```bash
+docker ps
+```
+
+### 👣 11. Abrindo o docker em outro terminal - Executando o arquivo docker
+
+```bash
+docker exec it "NOME DO ARQUIVO" bash
 ```
 
 ✅ Isso abrirá o mundo `.sdf` no Gazebo Ignition com pontes ROS 2 ativas.
