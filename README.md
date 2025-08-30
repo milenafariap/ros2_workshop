@@ -170,25 +170,25 @@ ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist \
 
 ## 🔎 Debug avançado
 
-## 1. Ver os nós ativos
+Ver os nós ativos
 
 ```bash
 ros2 node list
 ```
 
-## 2. Ver os serviços disponíveis
+Ver os serviços disponíveis
 
 ```bash
 ros2 service list
 ```
 
-## 3. Ver informações detalhadas de um tópico
+Ver informações detalhadas de um tópico
 
 ```bash
 ros2 topic info /cmd_vel
 ```
 
-## 4. Ver a taxa de publicação
+Ver a taxa de publicação
 
 ```bash
 ros2 topic hz /cmd_vel
