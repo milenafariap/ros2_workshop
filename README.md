@@ -1,8 +1,8 @@
-# 🌾 ROS 2 + Gazebo Ignition: Simulação de Ambiente Agrícola com Docker
+# WORKSHOP ON ROS2
 
-Este repositório contém um ambiente de simulação agrícola utilizando **ROS 2** e **Gazebo Ignition**, empacotado em um contêiner **Docker** para facilitar a portabilidade.
+Este repositório contém um ambiente de simulação utilizando **ROS 2** e **Gazebo Ignition**, empacotado em um contêiner **Docker** para facilitar a portabilidade.
 
-> ✅ Desenvolvido para facilitar testes e integração de robôs móveis em cenários agrícolas simulados.
+> ✅ Desenvolvido para ensinar ROS2
 
 ---
 
