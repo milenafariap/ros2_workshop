@@ -108,9 +108,8 @@ docker run -it --rm \
 ```bash
 cd /root/workshop_assets
 colcon build
-source install/setup.bash
-ros2 launch explore_world gazebo_with_bridge.launch.py
 ```
+
 ### 👣 9. Rodar o arquivo launch dentro do contêiner
 
 ```bash
