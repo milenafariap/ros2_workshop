@@ -118,21 +118,21 @@ source install/setup.bash
 ros2 launch explore_world gazebo_with_bridge.launch.py
 ```
 
-### 👣 10. Abrindo o docker em outro terminal - consultando o nome do docker
+---
+
+## 🤖 Testes - tópicos e movimento
+
+### Abrindo o docker em outro terminal - consultando o nome do docker
 
 ```bash
 docker ps
 ```
 
-### 👣 11. Abrindo o docker em outro terminal - Executando o arquivo docker
+### Abrindo o docker em outro terminal - Executando o arquivo docker
 
 ```bash
 docker exec it "NOME DO ARQUIVO" bash
 ```
-
----
-
-## 🤖 Testes - tópicos e movimento
 
 ## 👣 1. Listar os tópicos ativos:
 
@@ -160,14 +160,39 @@ ros2 topic pub -r 10 /cmd_vel geometry_msgs/msg/Twist \
 '{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.5}}'
 ```
 
-## 👣 5. Parar imediatamente**
+## 👣 5. Parar imediatamente
 
 ```bash
 ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist \
 '{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}'
 ```
+---
 
+## 🔎 Debug avançado
 
+## 1. Ver os nós ativos
+
+```bash
+ros2 node list
+```
+
+## 2. Ver os serviços disponíveis
+
+```bash
+ros2 service list
+```
+
+## 3. Ver informações detalhadas de um tópico
+
+```bash
+ros2 topic info /cmd_vel
+```
+
+## 4. Ver a taxa de publicação
+
+```bash
+ros2 topic hz /cmd_vel
+```
 
 ---
 
