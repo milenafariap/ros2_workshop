@@ -69,8 +69,8 @@
       <frame name="caster_frame" attached_to="base_link">
         <pose>0.8 0 -0.2 0 0 0</pose>
       </frame>
-      <frame name="lidar_frame" attached_to="base_link">
-        <pose>0.8 0 0.5 0 0 0</pose>
+      <frame name="lidar_frame" attached_to="lidar_link">
+        <pose>0.0 0 0.0 0 0 0</pose>
       </frame>
 
       <!-- Chassi -->
@@ -108,7 +108,7 @@
 
       <!-- LiDAR em link próprio -->
       <link name="lidar_link">
-        <pose>0.5 0.0 1.5 0 0 0</pose>
+        <pose>0.8 0.0 0.8 0 0 0</pose>
         <inertial>
           <mass>0.1</mass>
           <inertia>
@@ -116,21 +116,21 @@
           </inertia>
         </inertial>
         <collision name="collision">
-          <geometry><cylinder><radius>0.06</radius><length>0.07</length></cylinder></geometry>
+          <geometry><cylinder><radius>0.15</radius><length>0.15</length></cylinder></geometry>
         </collision>
         <visual name="visual">
-          <geometry><cylinder><radius>0.06</radius><length>0.07</length></cylinder></geometry>
+          <geometry><cylinder><radius>0.15</radius><length>0.15</length></cylinder></geometry>
           <material><diffuse>0.1 0.1 0.1 1</diffuse></material>
         </visual>
 
         <sensor name="gpu_lidar" type="gpu_lidar">
           <pose relative_to="lidar_frame">0 0 0 0 0 0</pose>
-          <topic>/lidar</topic>
+          <topic>/scan</topic>
           <update_rate>10</update_rate>
           <lidar>
             <scan>
               <horizontal>
-                <samples>640</samples>
+                <samples>180</samples>
                 <resolution>1</resolution>
                 <min_angle>-1.57</min_angle>
                 <max_angle> 1.57</max_angle>
