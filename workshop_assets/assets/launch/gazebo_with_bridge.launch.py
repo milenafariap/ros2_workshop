@@ -68,7 +68,7 @@ def generate_launch_description():
     bridge_camera_image = Node(
         package='ros_gz_bridge',
         executable='parameter_bridge',
-        arguments=['/camera@sensor_msgs/msg/Image@ignition.msgs.Image'],
+        arguments=['/camera/image_raw@sensor_msgs/msg/Image@ignition.msgs.Image'],
         output='screen'
     )
 
@@ -77,6 +77,13 @@ def generate_launch_description():
         package='ros_gz_bridge',
         executable='parameter_bridge',
         arguments=['/odom@nav_msgs/msg/Odometry@ignition.msgs.Odometry'],
+        output='screen'
+    )
+    
+    # Clock simulado — FUNDAMENTAL para timers com use_sim_time
+    bridge_clock = Node(
+        package='ros_gz_bridge', executable='parameter_bridge',
+        arguments=['/clock@rosgraph_msgs/msg/Clock@ignition.msgs.Clock'],
         output='screen'
     )
     
@@ -141,5 +148,6 @@ def generate_launch_description():
         static_tf_odom,
     	static_tf_base_link,
     	static_tf_map,
+    	bridge_clock,
     ])
 
