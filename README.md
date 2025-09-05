@@ -93,6 +93,7 @@ xhost +local:docker
 
 ```bash
 docker run -it --rm \
+  --name ros2_workshop_container \
   -v ~/ros2_workshop/workshop_assets:/root/workshop_assets \
   -e IGN_GAZEBO_RESOURCE_PATH=/root/workshop_assets/world:/root/workshop_assets/assets/sdf_world \
   -e GAZEBO_MODEL_PATH=/root/workshop_assets/assets/models \
